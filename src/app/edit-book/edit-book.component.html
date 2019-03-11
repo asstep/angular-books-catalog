@@ -1,0 +1,44 @@
+<div class="p-grid editBook">
+    <div class="p-col">
+        <form>
+            <div class="editBook-group">
+                <input type="text" [formControl]="name" placeholder="Название книги" value="{{this.thisBook.name}}">
+            </div>
+            <div class="editBook-group">
+                <input type="text" [formControl]="imgUrl" placeholder="Ссылка на изображение" value="{{this.thisBook.imgUrl}}">
+            </div>
+            <div class="createBook-group">
+                <textarea [formControl]="description" [(ngModel)]="thisBook.description" placeholder="Описание" rows="5"></textarea>
+            </div>
+            <div class="editBook-group">
+                <input type="text" [formControl]="author" placeholder="Автор(ы)" value="{{this.thisBook.author}}">
+            </div>
+            <div class="createBook-group">
+                <input type="text" [formControl]="isbn" placeholder="Код ISBN" value="{{this.thisBook.isbn}}">
+            </div>
+            <div class="editBook-group">
+                <input type="text" [formControl]="year" placeholder="Год издания" value="{{this.thisBook.year}}">
+            </div>
+            <div class="createBook-group">
+                <input type="text" [formControl]="rating" placeholder="Рейтинг" value="{{this.thisBook.rating}}">
+            </div>
+
+            <div class="editBook-group">
+                <button (click)="createBook()">Edit book</button>
+            </div>
+        </form>
+    </div>
+    <div class="p-col">
+        <h3 class="name">
+            {{this.thisBook.name}}, {{this.thisBook.year}}
+        </h3>
+        <div class="image">
+            <img [src]="this.thisBook.imgUrl"
+                 (error)="this.thisBook.imgUrl = './assets/img/noimage.png'"
+                 alt="{{this.thisBook.name}}">
+        </div>
+        <h4 class="author">
+            {{this.thisBook.author}}
+        </h4>
+    </div>
+</div>

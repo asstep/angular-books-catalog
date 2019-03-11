@@ -1,0 +1,29 @@
+.header {
+  border: 1px solid #ccc;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+
+  &-menu {
+    display: flex;
+
+    font-size: 16px;
+
+    .item a {
+      padding: 2px 3px;
+      margin: 0 15px;
+    }
+  }
+}
+.main {
+  display: block;
+  min-height: calc(100% - 138px);
+}
+.footer {
+  background: #333333;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 0;
+}

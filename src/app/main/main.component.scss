@@ -1,0 +1,19 @@
+.books-list {
+  max-width: 1170px;
+  margin: 40px auto;
+
+  .item {
+    border: 1px solid #ccc;
+    display: block;
+    padding: 10px 20px;
+    margin: 10px;
+  }
+
+  .image {
+    text-align: center;
+  }
+
+  .author {
+    text-align: right;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="books-list">
+    <div class="p-grid">
+        <div class="p-col item"
+             *ngFor="let item of this.bookList ">
+            <a routerLink="edit/{{ item.id }}">
+                <h3 class="name">
+                    {{ item.name }}, {{ item.year }}
+                </h3>
+                <div class="image">
+                    <img [src]="item.imgUrl"
+                         (error)="item.imgUrl = './assets/img/noimage.png'"
+                         alt="{{ item.name }}">
+                </div>
+                <h4 class="author">
+                    {{ item.author }}
+                </h4>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="p-grid createBook">
+    <div class="p-col">
+        <form>
+            <div class="createBook-group">
+                <input type="text" [formControl]="name" placeholder="Название книги">
+            </div>
+            <div class="createBook-group">
+                <input type="text" [formControl]="imgUrl" placeholder="Ссылка на изображение">
+            </div>
+            <div class="createBook-group">
+                <textarea [formControl]="description" placeholder="Описание"></textarea>
+            </div>
+            <div class="createBook-group">
+                <input type="text" [formControl]="author" placeholder="Автор(ы)">
+            </div>
+            <div class="createBook-group">
+                <input type="text" [formControl]="isbn" placeholder="Код ISBN">
+            </div>
+            <div class="createBook-group">
+                <input type="text" [formControl]="year" placeholder="Год издания">
+            </div>
+            <div class="createBook-group">
+                <input type="text" [formControl]="rating" placeholder="Рейтинг">
+            </div>
+
+            <div class="createBook-group">
+                <button (click)="createBook()">Create book</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="p-col">
+        <h3 class="name">
+            {{this.name.value}}
+        </h3>
+        <div class="image">
+            <img [src]="this.imgUrl.value"
+                 (error)="this.imgUrl.value = './assets/img/noimage.png'"
+                 alt="{{ this.name.value }}">
+        </div>
+        <h4 class="author">
+            {{this.author.value}}
+        </h4>
+    </div>
+</div>
